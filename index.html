@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>رسائل حب 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Cairo', sans-serif;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background-color:#170322;
+
+    background-image:
+    radial-gradient(circle at 15% 10%, rgba(255,255,255,0.18), transparent 24%),
+    radial-gradient(circle at 80% 10%, rgba(255,255,255,0.12), transparent 18%),
+    linear-gradient(180deg, rgba(255,123,156,0.22), rgba(105,34,199,0.15) 45%, rgba(44,11,74,0.22)),
+    url('https://cdn.discordapp.com/attachments/1431423889212444854/1507769560835817562/IMG_1500.jpg?ex=6a131b54&is=6a11c9d4&hm=3aa68f87967e98768a68987e2094ea19a44c179a4ea1619303cf1b19524d8e17&');
+
+    background-size:cover;
+
+    background-position:center;
+
+    position:relative;
+}
+
+/* التوهج */
+
+.glow{
+
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    background:radial-gradient(circle, rgba(255,255,255,0.22), rgba(255,63,146,0.08) 40%, transparent 70%);
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    animation:pulse 5s infinite alternate;
+}
+
+@keyframes pulse{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.2);
+    }
+}
+
+/* القلوب */
+
+.heart{
+
+    position:absolute;
+
+    color:#ffe9ff;
+
+    opacity:0.85;
+
+    pointer-events:none;
+
+    animation:float 8s linear infinite;
+
+    text-shadow:
+    0 0 10px rgba(255,125,200,0.8),
+    0 0 18px rgba(255,255,255,0.6);
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:
+        translateY(100vh)
+        scale(0.5)
+        rotate(0deg);
+
+        opacity:0;
+    }
+
+    30%{
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+        translateY(-20vh)
+        scale(1.3)
+        rotate(360deg);
+
+        opacity:0;
+    }
+}
+
+/* الكارد */
+
+.card{
+
+    width:440px;
+
+    background:rgba(255,255,255,0.15);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:35px;
+
+    padding:40px 35px;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:10;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.25);
+
+    animation:fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* القلب */
+
+.bigHeart{
+
+    font-size:75px;
+
+    margin-bottom:15px;
+
+    animation:beat 1.5s infinite;
+
+    text-shadow:
+    0 0 25px rgba(255,255,255,0.65),
+    0 0 12px rgba(255,20,147,0.9);
+}
+
+@keyframes beat{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* العنوان */
+
+h1{
+
+    color:white;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+}
+
+/* الرسائل */
+
+#message{
+
+    color:white;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    min-height:160px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:0.5s;
+
+    white-space:pre-line;
+}
+
+/* اسم المرسل */
+
+.sender-name{
+
+    color:#ff99cc;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    margin-top:15px;
+
+    padding-top:15px;
+
+    border-top:1px solid rgba(255,255,255,0.2);
+
+    letter-spacing:1px;
+}
+
+/* الزر */
+
+button{
+
+    margin-top:20px;
+
+    padding:13px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:#ff1e4d;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:
+    0 5px 20px rgba(255,255,255,0.25);
+}
+
+button:hover{
+
+    transform:
+    scale(1.08)
+    translateY(-2px);
+
+    box-shadow:
+    0 10px 30px rgba(255,255,255,0.4);
+}
+
+/* زر الموسيقى */
+
+#musicBtn{
+
+    margin-top:10px;
+
+    padding:10px 25px;
+
+    font-size:13px;
+
+    background:rgba(255,255,255,0.2);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,0.3);
+}
+
+#musicBtn:hover{
+
+    background:rgba(255,255,255,0.3);
+}
+
+/* الزخارف */
+
+.circle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.08);
+}
+
+.c1{
+
+    width:120px;
+    height:120px;
+
+    top:-40px;
+    left:-40px;
+}
+
+.c2{
+
+    width:90px;
+    height:90px;
+
+    bottom:-30px;
+    right:-20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="glow"></div>
+
+<div class="card">
+
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+
+    <div class="bigHeart">🤍</div>
+
+    <h1>رسائل خاصة من فاملي الحلو</h1>
+
+    <div id="message">
+        اضغط ابدأ 🤍
+    </div>
+
+    <div class="sender-name" id="senderName"></div>
+
+    <button id="mainBtn" onclick="nextMessage()">
+        ابدأ
+    </button>
+
+    <button id="musicBtn" onclick="toggleMusic()">
+        🎵 تشغيل الموسيقى
+    </button>
+
+</div>
+
+<audio id="bgMusic" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* الرسائل مع أسماء المرسلين */
+
+const messages = [
+    {text: "لولي ؟", sender: "من الفاملي"},
+    {text: "ثاني أعيادي معك\nأو هل من الصح أقول كل أوقاتي معك عيد؟\nمن يوم عرفتك وأنا كل أيامي أعياد", sender: "منار 💕"},
+    {text: "وكل عام وأنتِ سعيدة\nوأنا الأسعد لأنك بحياتي ❤️🫵🏻", sender: "منار ✨"},
+    {text: "كل عام وانتي بخيرر يا ستريمري العسل\nالله يسعدك ويوفقك ويحقق لك كل اللي تتمنينه\nوعسى أيامك كلها فرح ووناسة\nاحبككك❤️❤️", sender: "رتوج 🎀"},
+    {text: "يا ساكناً في مهجتي وفؤادي\nتحلو بقربك فرحة الأعياد\nاحبببكك ححووووووب لوليي🫶🏻🫶🏻🫶🏻", sender: "نونه 💜"},
+    {text: "عيدك سعيد حبيبي\nوجعلك موجودة بكل عيد\nيااا لبى يا مربى", sender: "نوني 🌸"},
+    {text: "عيد اضحى سعيد يا لولي\nوممتنه مره لوجودك الحلو بحياتي🤍", sender: "جنو 💖"},
+    {text: "كل عام وانتي بخير يا وجه الخير\nعيدك مبارك\nاعاده الله علينا وعليك بالصحة و العافيه\nطوري لي السكار", sender: "بيتزا 🍕"},
+    {text: "كل عام وانتي عيدنا يا روحي\nعيدك مبارك يا رب كل عيدي معك\nلان الفرحة قربك فرحتين\nاحبك موت", sender: "امون 🫶🏻"},
+    {text: "كل عام وانتي الخير بحد ذاته\nكل عام وانتي لعيدي فرحة\nعسى كل عيد اشوفك بخير\nو عسى ربي يخليك معي بكل سنيني", sender: "رنو ⭐"},
+    {text: "ما العيد الا ربيع انت زهرته وانت فيه النسيم\nالنهر و الشجر\nما العيد الا سماء انت نجمته\nو انت فيه الهلال الغيم و المطر", sender: "بوري 🌙"},
+    {text: "كل عام وبثوثك عيدنا\nعسى ربي يعوضك على كل ثانية تقضينها بالبث\n10 دولار", sender: "الفاملي الباقي 💸"},
+    {text: "عيدك مبارك يا أجمل صدفة ❤\nكل عام وأنتِ الشي الحلو اللي يجي مع العيد", sender: "صديقة خاصة 👑"},
+    {text: "عسى العيد يجيك بفرح يشبه ضحكتك\nوسعادة تليق بقلبك الحلو\nالله يديم عليك الضحكة وراحة البال\nويحقق لك كل اللي تتمنينه", sender: "لوكا 🌹"}
+];
+
+let index = -1;
+let isPlaying = false;
+
+/* الرسائل */
+
+function nextMessage(){
+
+    index++;
+
+    const message = document.getElementById("message");
+    const senderName = document.getElementById("senderName");
+    const button = document.getElementById("mainBtn");
+
+    message.style.opacity = "0";
+
+    setTimeout(()=>{
+
+        if(index < messages.length){
+
+            message.innerText = messages[index].text;
+            senderName.innerText = "- " + messages[index].sender;
+
+            if(index === messages.length - 1){
+                button.innerText = "RESTART";
+            } else {
+                button.innerText = "NEXT";
+            }
+
+        } else {
+
+            index = -1;
+            message.innerText = "اضغط ابدأ 🤍";
+            senderName.innerText = "";
+            button.innerText = "ابدأ";
+        }
+
+        message.style.opacity = "1";
+
+    },300);
+}
+
+/* تشغيل/إيقاف الموسيقى */
+
+function toggleMusic(){
+
+    const audio = document.getElementById("bgMusic");
+    const btn = document.getElementById("musicBtn");
+
+    if(isPlaying){
+        audio.pause();
+        btn.innerText = "🎵 تشغيل الموسيقى";
+        isPlaying = false;
+    } else {
+        audio.play();
+        btn.innerText = "⏸️ إيقاف الموسيقى";
+        isPlaying = true;
+    }
+}
+
+/* إنشاء القلوب */
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.classList.add("heart");
+
+    heart.innerHTML = "❤";
+
+    heart.style.left = Math.random()*100 + "vw";
+
+    heart.style.fontSize = Math.random()*20 + 10 + "px";
+
+    heart.style.animationDuration = Math.random()*4 + 4 + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },8000);
+}
+
+setInterval(createHeart,150);
+
+</script>
+
+</body>
+
+</html>
