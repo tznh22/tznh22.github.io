@@ -513,8 +513,6 @@ button:hover{
 
 <script>
 
-/* الرسائل مع أسماء المرسلين */
-
 const messages = [
     {text: "لولي ؟", sender: "من الفاملي"},
     {text: "ثاني أعيادي معك\nأو هل من الصح أقول كل أوقاتي معك عيد؟\nمن يوم عرفتك وأنا كل أيامي أعياد", sender: "منار 💕"},
@@ -530,18 +528,14 @@ const messages = [
     {text: "كل عام وبثوثك عيدنا\nعسى ربي يعوضك على كل ثانية تقضينها بالبث\n10 دولار", sender: "الفاملي الباقي 💸"},
     {text: "عيدك مبارك يا أجمل صدفة ❤\nكل عام وأنتِ الشي الحلو اللي يجي مع العيد\nعسى العيد يجيك بفرح يشبه ضحكتك\nوسعادة تليق بقلبك الحلو\nالله يديم عليك الضحكة وراحة البال\nويحقق لك كل اللي تتمنينه", sender: "لوكا 🌹"},
     {text: "شكرا خاص لرودي على كل شي يسويه و على كل فكرة يجيبها عشان تخلي البث حلوو و الستريمر سعيدة\nصح ما شفنا رسالة منهم لاكن هو بحد ذاته رسالة و هدية للبث و للستريمر\nالله لا يحرمنا من افكارك يا ابو شنب اخضر 💚", sender: "من الفاملي لرودي"},
-    {text: "شكر خاص بعد ل:\nلوكا 🌹 مسؤول الرسائل\nنوف 🎵 مسؤولة الاغاني\nالي بتطورون له السكار 💻 مسؤول البرمجة\n\nشكرا على كل ما تسوونه عشان تخلوا البث احسن و أحلى 💕", sender: "الشكر الختامي 🤍"}
+    {text: "شكر خاص بعد ل:\n\nلوكا 🌹 مسؤول الرسائل\nنوف 🎵 مسؤولة الأغاني\nالسكار 💻 مسؤول البرمجة\n\nشكرا على كل ما تسوونه عشان تخلوا البث احسن و أحلى 💕", sender: "الشكر الختامي 🤍"}
 ];
 
 let index = -1;
 let isPlaying = false;
 
-/* الرسائل */
-
 function nextMessage(){
-
     index++;
-
     const message = document.getElementById("message");
     const senderName = document.getElementById("senderName");
     const button = document.getElementById("mainBtn");
@@ -549,9 +543,7 @@ function nextMessage(){
     message.style.opacity = "0";
 
     setTimeout(()=>{
-
         if(index < messages.length){
-
             message.innerText = messages[index].text;
             senderName.innerText = "- " + messages[index].sender;
 
@@ -560,9 +552,7 @@ function nextMessage(){
             } else {
                 button.innerText = "NEXT";
             }
-
         } else {
-
             index = -1;
             message.innerText = "اضغط ابدأ 🤍";
             senderName.innerText = "";
@@ -570,14 +560,10 @@ function nextMessage(){
         }
 
         message.style.opacity = "1";
-
     },300);
 }
 
-/* تشغيل/إيقاف الموسيقى */
-
 function toggleMusic(){
-
     const audio = document.getElementById("bgMusic");
     const btn = document.getElementById("musicBtn");
 
@@ -594,22 +580,13 @@ function toggleMusic(){
     }
 }
 
-/* إنشاء القلوب */
-
 function createHeart(){
-
     const heart = document.createElement("div");
-
     heart.classList.add("heart");
-
     heart.innerHTML = "❤";
-
     heart.style.left = Math.random()*100 + "vw";
-
     heart.style.fontSize = Math.random()*20 + 10 + "px";
-
     heart.style.animationDuration = Math.random()*4 + 4 + "s";
-
     document.body.appendChild(heart);
 
     setTimeout(()=>{
